@@ -23,4 +23,4 @@ jobs:
       - name: Rodar Migração
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npm run db:migrate
+        run: echo $DATABASE_URL && npm run db:migrate
