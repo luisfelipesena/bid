@@ -1,5 +1,7 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
+
+console.log(process.env, `${process.env.NEXT_PUBLIC_VERCEL_URL}/api`);
 export const env = createEnv({
   server: {
     DATABASE_URL: z.string().url(),
@@ -14,3 +16,4 @@ export const env = createEnv({
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
   },
 });
+
