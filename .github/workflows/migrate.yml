@@ -20,7 +20,13 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+      - name: Gerar Migração (Caso os arquivos não estejam no repositório)
+        run: npm run db:generate
+
+      - name: Listar Arquivos da Pasta Drizzle (Debug)
+        run: ls -R drizzle
+
       - name: Rodar Migração
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: echo $DATABASE_URL && npm run db:migrate
+        run: npm run db:migrate
