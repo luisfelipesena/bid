@@ -23,4 +23,4 @@ jobs:
       - name: Rodar Migração
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx drizzle-kit push
+        run: npm run db:migrate
