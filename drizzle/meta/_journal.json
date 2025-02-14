@@ -8,6 +8,13 @@
       "when": 1739506100201,
       "tag": "0000_smart_mongu",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1739508249428,
+      "tag": "0001_light_johnny_blaze",
+      "breakpoints": true
     }
   ]
 }
