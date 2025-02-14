@@ -11,7 +11,20 @@ export const migrateDb = async () => {
     await migrate(db, { migrationsFolder: "./drizzle" })
     console.log("Migration complete")
   } catch (error) {
-    console.log(error)
+    console.error("Error running migrations:", error)
+    process.exit(1)
   }
-  process.exit(0)
+}
+
+// Run migration if this file is executed directly
+if (require.main === module) {
+  migrateDb()
+    .then(() => {
+      console.log("Migration script finished")
+      process.exit(0)
+    })
+    .catch((err) => {
+      console.error("Migration script failed:", err)
+      process.exit(1)
+    })
 }

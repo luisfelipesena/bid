@@ -1,4 +1,3 @@
-import { migrateDb } from "@/server/db/migrate"
 import { neon } from "@neondatabase/serverless"
 import { drizzle } from "drizzle-orm/neon-http"
 import { env } from "hono/adapter"
@@ -17,11 +16,9 @@ export const j = jstack.init<Env>()
  */
 const databaseMiddleware = j.middleware(async ({ c, next }) => {
   const { DATABASE_URL } = env(c)
-  await migrateDb()
+
   const sql = neon(DATABASE_URL)
   const db = drizzle(sql)
-
-  console.log({db})
 
   return await next({ db })
 })
