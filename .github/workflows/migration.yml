@@ -16,8 +16,6 @@ jobs:
         run: |
           npm install
           npm install -g drizzle-orm drizzle-kit pg
-      - name: List all files in the drizzle folder
-        run: ls -R drizzle && ls -R src
       - name: Apply migrations
         run: drizzle-kit migrate
         env:
