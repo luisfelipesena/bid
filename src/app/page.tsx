@@ -60,7 +60,6 @@ export default function HomePage() {
       <div className="space-y-4">
         <div key={post?.id} className="rounded-lg border bg-card p-4 text-card-foreground shadow-sm">
           <p>{post?.name}</p>
-          <p>{post?.createdAt2?.toISOString()}</p>
         </div>
       </div>
 
