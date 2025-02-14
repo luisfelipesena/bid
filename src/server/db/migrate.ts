@@ -3,7 +3,7 @@ import { drizzle } from "drizzle-orm/neon-http"
 import { neon } from "@neondatabase/serverless"
 import "dotenv/config"
 
-const main = async () => {
+export const migrateDb = async () => {
   try {
     const sql = neon(process.env.DATABASE_URL!)
     const db = drizzle(sql)
@@ -15,5 +15,3 @@ const main = async () => {
   }
   process.exit(0)
 }
-
-main() 
